@@ -1,8 +1,8 @@
 const Contact = () => {
     return (
         <>
-        <div>
-            <div>
+        <div className="wrapper">
+            <div className="container">
                 <h1>Contact page.</h1>
                 <p>Mail: gen.gen.ta0218@gmail.com</p>
                 <form >

@@ -1,20 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import profilePic from "../public/images/profile.jpg";
+import profilePic from "../public/images/me-pic.jpg";
 import heroPic from "../public/images/index-hero.jpg";
 
 const Index = () =>{
   return (
     <> 
-    <div>
+    <div className="hero">
       <Image src={heroPic} alt="hero" />
-      <div>
+      <div className="textContainer">
         <h1>I'm Kasai Genta</h1>
         <h3>Bullet Group Inc.</h3>
       </div>
     </div>
-    <div>
-      <div>
+    <div className="container">
+      <div className="profile">
         <div>
           <h2>Student</h2>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -27,28 +27,24 @@ const Index = () =>{
           <Image src={profilePic} alt="profile" />
         </div>
       </div>
-      <div>
+      <div className="skills">
         <h2>Skills</h2>
-        <div>
+        <div className="skillsContainer">
           <div>
-            <img src="/images/javascript.svg" alt="javascript" />
+            <img src="/images/javascript_2.svg" alt="javascript" />
             <span>Javascript</span>
           </div>
           <div>
-            <img src="/images/react.svg" alt="react" />
+            <img src="/images/react_2.svg" alt="react" />
             <span>React</span>
           </div>
           <div>
-            <img src="/images/next.svg" alt="next" />
+            <img src="/images/next_2.svg" alt="next" />
             <span>Next.js</span>
-          </div>
-          <div>
-            <img src="/images/gatsby.svg" alt="gatsby" />
-            <span>Gatsby</span>
           </div>
         </div>
       </div>
-      <div>
+      <div className="ctaButton">
         <Link href="/contact">Contact</Link>
       </div>
     </div>
