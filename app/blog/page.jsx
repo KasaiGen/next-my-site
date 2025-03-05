@@ -2,6 +2,7 @@ import fs from 'fs'; //ファイルシステムを操作するためのモジュ
 import path from 'path';
 import matter from 'gray-matter'; //ファイルの内容を解析するためのモジュール
 import Link from 'next/link';
+import Image from 'next/image';
 
 // 非同期関数(async)を使って、dataフォルダにある全てのブログを取得する関数を作成
 async function getAllBlogs(){
@@ -32,22 +33,25 @@ const Blog = async() => {
     console.log(blogs);
     return (
         <>
-        <div>
-            <h1>Blog page.</h1>
-            <p>バレットグループ インターン記録</p>
-            {blogs.map((blog,Index) => 
-                <div key={Index}>
-                    <div>
-                        <h2>{blog.frontmatter.title}</h2>
-                        <p>{blog.frontmatter.except}</p>
-                        <p>{blog.frontmatter.date}</p>
-                        <Link href={`/blog/${blog.slug}`}>Read More</Link>
+        <div className='wrapper'>
+            <div className='contaienr'>
+                <h1>Blog page.</h1>
+                <p>記事を残していきます。</p>
+                {blogs.map((blog,Index) => 
+                    <div key={Index} className='blogCard'>
+                        <div className='cardContainer'>
+                            <h2>{blog.frontmatter.title}</h2>
+                            <p>{blog.frontmatter.except}</p>
+                            <p>{blog.frontmatter.date}</p>
+                            <Link href={`/blog/${blog.slug}`}>Read More</Link>
+                        </div>
+                        <div className='blogImg'>
+                            <Image src={blog.frontmatter.image} alt="card-image" 
+                            height={300} width={1000} qualiy={90} priority={true} />
+                        </div>
                     </div>
-                    <div>
-
-                    </div>
-                </div>
-            )}
+                )}
+            </div>
         </div>
         </>
     )
