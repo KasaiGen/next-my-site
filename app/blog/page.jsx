@@ -2,6 +2,7 @@ import fs from 'fs'; //ファイルシステムを操作するためのモジュ
 import path from 'path';
 import matter from 'gray-matter'; //ファイルの内容を解析するためのモジュール
 import Link from 'next/link';
+import Image from 'next/image';
 
 // 非同期関数(async)を使って、dataフォルダにある全てのブログを取得する関数を作成
 async function getAllBlogs(){
@@ -44,7 +45,8 @@ const Blog = async() => {
                         <Link href={`/blog/${blog.slug}`}>Read More</Link>
                     </div>
                     <div>
-
+                        <Image src={blog.frontmatter.image} alt="card-image" 
+                        height={300} width={1000} qualiy={90} priority={true} />
                     </div>
                 </div>
             )}
