@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logoImage from "../../public/images/logo.png";
+import logoImage from "../../public/images/logo_2.png";
 
 const Header =()=>{
     return(

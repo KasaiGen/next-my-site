@@ -11,7 +11,7 @@ const Footer = () => {
                 <hr/>
                 <Link href="/blog">Blog</Link>
                 <Link href="/contact">Contact</Link>
-                <p>©{new Date().getFullYear()} Abe Hiroki</p>
+                <p>©{new Date().getFullYear()} Kasai Genta</p>
             </div>
         </footer>
         </>
