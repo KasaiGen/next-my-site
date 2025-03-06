@@ -3,6 +3,10 @@ import Link from "next/link";
 import profilePic from "../public/images/me-pic.jpg";
 import heroPic from "../public/images/index-hero.jpg";
 
+export const metadata = {
+  title: "Kasai Genta",
+  description: "Kasai Gentaのポートフォリオサイトです",
+}
 const Index = () =>{
   return (
     <> 

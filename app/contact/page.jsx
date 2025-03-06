@@ -1,9 +1,13 @@
+export const metadata = {
+    title: "Contact",
+    description: "コンタクトページです",
+}
 const Contact = () => {
     return (
         <>
         <div className="wrapper">
             <div className="container">
-                <h1>Contact page.</h1>
+                <h1>Contact Page</h1>
                 <p>Mail: gen.gen.ta0218@gmail.com</p>
                 <form >
                     <label htmlFor="name">Name</label>
