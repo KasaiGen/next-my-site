@@ -3,13 +3,20 @@ import Image from 'next/image';
 import { getAllBlogs,getSingleBlog } from '@/app/utils/mdQueries';
 import PrevNext from "../../components/prevNext";
 
+export async function generateMetadata(props) {
+    const {singleDocument} = await getSingleBlog(props);
+    return {
+        title: singleDocument.data.title,
+        description:singleDocument.data.excerpt,
+    }
+}
 const SingleBlog = async(props) =>{
     const {singleDocument} = await getSingleBlog(props);
     const {blogs} = await getAllBlogs();
-    // 次のページ
+    // 戻るページ
     const prev = blogs.filter(blog => blog.frontmatter.id === 
         singleDocument.data.id -1)
-    // 戻るページ
+    // 次のページ
     const next = blogs.filter(blog => blog.frontmatter.id === 
         singleDocument.data.id + 1)
     return (

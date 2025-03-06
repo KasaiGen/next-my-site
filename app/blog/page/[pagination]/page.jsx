@@ -3,6 +3,10 @@ import Image from 'next/image';
 import { getAllBlogs,blogsPerPage } from '../../../utils/mdQueries';
 import Pagination from '../../../components/pagination';
 
+export const metadata = {
+    title: "Blogs",
+    description: "ブログページです",
+}
 const PaginationPage = async(props) => {
     const { blogs, numberPages } = await getAllBlogs()
     const currentPage = props.params.pagination
