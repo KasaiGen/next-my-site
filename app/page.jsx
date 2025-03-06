@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import profilePic from "../public/images/me-pic.jpg";
-import heroPic from "../public/images/index-hero.jpg";
+import heroPic from "../public/images/header.jpg";
 
 export const metadata = {
   title: "Kasai Genta",

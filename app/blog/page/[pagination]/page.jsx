@@ -9,9 +9,9 @@ export const metadata = {
 }
 const PaginationPage = async(props) => {
     const { blogs, numberPages } = await getAllBlogs()
-    const currentPage = props.params.pagination
+    const currentPage = props.params.pagination;
     console.log(props);
-    const limitedBlogs = blogs.slice((currentPage -1) * blogsPerPage, currentPage * blogsPerPage)
+    const limitedBlogs = blogs.slice((currentPage -1) * blogsPerPage, currentPage * blogsPerPage);
     return (
         <>
         <div className="wrapper">
