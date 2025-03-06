@@ -2,6 +2,7 @@ import fs from 'fs'; //ファイルシステムを操作するためのモジュ
 import path from 'path';
 import matter from 'gray-matter'; //ファイルの内容を解析するためのモジュール
 
+export const blogsPerPage = 5;
 // 非同期関数(async)を使って、dataフォルダにある全てのブログを取得する関数を作成
 export async function getAllBlogs(){
     const files = fs.readdirSync(path.join("data"));
@@ -18,9 +19,10 @@ export async function getAllBlogs(){
     const orderedBlogs = blogs.sort((a,b) => {
         return b.frontmatter.id - a.frontmatter.id
     })
-
+    const numberPages = Math.ceil(orderedBlogs.length / blogsPerPage)
     return {
-        blogs: orderedBlogs
+        blogs: orderedBlogs,
+        numberPages: numberPages
     }
 }
 export async function getSingleBlog(context) {

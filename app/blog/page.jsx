@@ -1,33 +1,35 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getAllBlogs } from '../utils/mdQueries';
+import { getAllBlogs,blogsPerPage } from '../utils/mdQueries';
+import Pagination from '../components/pagination';
 
 const Blog = async() => {
-    const {blogs} = await getAllBlogs();
-    console.log(blogs);
+    const { blogs, numberPages } = await getAllBlogs()
+    const limitedBlogs = blogs.slice(0, blogsPerPage)
     return (
         <>
-        <div className='wrapper'>
-            <div className='contaienr'>
-                <h1>Blog page.</h1>
+        <div className="wrapper">
+            <div className="container">   
+                <h1>Blog Page</h1>
                 <p>記事を残していきます。</p>
-                {blogs.map((blog,Index) => 
-                    <div key={Index} className='blogCard'>
-                        <div className='cardContainer'>
-                            <h2>{blog.frontmatter.title}</h2>
-                            <p>{blog.frontmatter.except}</p>
-                            <p>{blog.frontmatter.date}</p>
-                            <Link href={`/blog/${blog.slug}`}>Read More</Link>
+                    {limitedBlogs.map((blog, index) => 
+                        <div key={index} className="blogCard"> 
+                            <div className="cardContainer">
+                                <h2>{blog.frontmatter.title}</h2>
+                                <p>{blog.frontmatter.excerpt}</p>
+                                <p>{blog.frontmatter.date}</p>
+                                <Link href={`/blog/${blog.slug}`}>Read More</Link>
+                            </div>
+                            <div className="blogImg">
+                                <Image src={blog.frontmatter.image} alt="card-image" height={300} width={1000} quality={90} priority={true} />
+                            </div>
                         </div>
-                        <div className='blogImg'>
-                            <Image src={blog.frontmatter.image} alt="card-image" 
-                            height={300} width={1000} qualiy={90} priority={true} />
-                        </div>
-                    </div>
-                )}
-            </div>
+                    )}  
+            </div>  
+            <Pagination numberPages={numberPages} />
         </div>
-        </>
+        </> 
     )
 }
-export default Blog;
+
+export default Blog
