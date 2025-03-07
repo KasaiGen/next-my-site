@@ -25,7 +25,7 @@ export async function getAllBlogs(){
         numberPages: numberPages
     }
 }
-export async function getSingleBlog(context) {
+export async function getSingleBlog(context:any) {
     const { slug } = await context.params;
     const data = await import(`../../data/${slug}.md`)
     const singleDocument = matter(data.default)

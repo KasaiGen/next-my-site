@@ -7,7 +7,7 @@ import "./styles/singleBlog.css"
 import Header from "./components/header";
 import Footer from "./components/footer";
 
-const RootLayout=({ children })=> {
+const RootLayout=({ children }:any)=> {
   return (
     <html lang="en">
       <body>
