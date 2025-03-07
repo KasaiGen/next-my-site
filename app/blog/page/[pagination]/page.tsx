@@ -7,7 +7,7 @@ export const metadata = {
     title: "Blogs",
     description: "ブログページです",
 }
-const PaginationPage = async(props) => {
+const PaginationPage = async(props:any) => {
     const { blogs, numberPages } = await getAllBlogs()
     const currentPage = props.params.pagination;
     console.log(props);
@@ -28,7 +28,7 @@ const PaginationPage = async(props) => {
                             </div>
                             <div className="blogImg">
                             <Image src={blog.frontmatter.image} alt="card-image" 
-                            height={300} width={1000} qualiy={90} priority={true} />
+                            height={300} width={1000} quality={90} priority={true} />
                         </div>
                     </div>
                 )}

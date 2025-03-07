@@ -72,6 +72,35 @@
     width: 100px;
 }
 
+.learning { 
+    padding: 0 0 10rem;
+}
+
+.learning > h2 {
+    text-align: center;
+    margin-bottom: 7rem;
+}
+
+.learning > .skillsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    align-items: center;
+    grid-row-gap: 3rem;
+}
+
+.learning > .skillsContainer > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+}
+
+.learning > .skillsContainer > * > img {
+    width: 100px;
+}
+
+
 .ctaButton {
     padding: 0 0 10rem;
     text-align: center;

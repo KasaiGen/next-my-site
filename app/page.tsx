@@ -14,18 +14,16 @@ const Index = () =>{
       <Image src={heroPic} alt="hero" />
       <div className="textContainer">
         <h1>I'm Kasai Genta</h1>
-        <h3>Bullet Group Inc.</h3>
+        {/* <h3>Bullet Group Inc.</h3> */}
       </div>
     </div>
     <div className="container">
       <div className="profile">
         <div>
-          <h2>Student</h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-          It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+          <h2>河西玄太</h2>
+          <p>出身：山梨県</p>
+          <p>4年制の情報系専門学校に在学中です。(4年生)<br />
+          2月よりバレットグループでインターンをしています。</p>
         </div>
         <div>
           <Image src={profilePic} alt="profile" />
@@ -42,9 +40,18 @@ const Index = () =>{
             <img src="/images/react_2.svg" alt="react" />
             <span>React</span>
           </div>
-          <div>
+        </div>
+      </div>
+      <div className="learning">
+        <h2>Learning</h2>
+        <div className="skillsContainer">
+        <div>
             <img src="/images/next_2.svg" alt="next" />
             <span>Next.js</span>
+          </div>
+          <div>
+            <img src="/images/typescript.svg" alt="next" />
+            <span>Typescript</span>
           </div>
         </div>
       </div>
