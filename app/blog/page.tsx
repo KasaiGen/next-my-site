@@ -15,7 +15,7 @@ const Blog = async() => {
         <div className="wrapper">
             <div className="container">   
                 <h1>Blog Page</h1>
-                <p>記事を残していきます。</p>
+                <p>何か記事を残していこうと思います。</p>
                     {limitedBlogs.map((blog, index) => 
                         <div key={index} className="blogCard"> 
                             <div className="cardContainer">
