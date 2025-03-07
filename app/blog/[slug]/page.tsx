@@ -1,16 +1,16 @@
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
-import { getAllBlogs,getSingleBlog } from '@/app/utils/mdQueries';
+import { getAllBlogs,getSingleBlog } from '../../utils/mdQueries';
 import PrevNext from "../../components/prevNext";
 
-export async function generateMetadata(props) {
+export async function generateMetadata(props : any) {
     const {singleDocument} = await getSingleBlog(props);
     return {
         title: singleDocument.data.title,
         description:singleDocument.data.excerpt,
     }
 }
-const SingleBlog = async(props) =>{
+const SingleBlog = async(props : any) =>{
     const {singleDocument} = await getSingleBlog(props);
     const {blogs} = await getAllBlogs();
     // 戻るページ
@@ -38,7 +38,7 @@ const SingleBlog = async(props) =>{
 export default SingleBlog;
 export async function generateStaticParams() {
     const {blogs} = await getAllBlogs();
-    const paths = blogs.map((blog) => ({
+    const paths = blogs.map((blog : any) => ({
         params: { slug: blog.slug }
     }));
 
