@@ -30,7 +30,7 @@ const Contact: FC<FormProps> = () => {
         });
     }
     const onSubmit = async(event: React.FormEvent<HTMLFormElement>) => {
-        // event.preventDefault(); // フォームのリロードをなし
+        event.preventDefault(); // フォームのリロードをなし
         setLoading(true);
         setSuccess(false);
         setError("");
@@ -43,6 +43,7 @@ const Contact: FC<FormProps> = () => {
             });
             if(res.ok){
                 setSuccess(true);
+                console.log("Success",success);
                 setFormData({name: "",mail: "",message: ""});
             }else{
                 throw new Error("送信に失敗しました");
