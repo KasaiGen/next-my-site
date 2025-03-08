@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState,useEffect, FC } from "react";
 import { metadata } from "./components/metadata";
@@ -12,7 +12,7 @@ interface FormProps {
 const Contact: FC<FormProps> = () => {
     useEffect(()=>{
         document.title = metadata.title;
-    })
+    });
     const [formData, setFormData] = useState({
         name: "",
         mail: "",
@@ -35,7 +35,6 @@ const Contact: FC<FormProps> = () => {
             <div className="wrapper">
                 <div className="container">
                     <h1>Contact Page</h1>
-                    <p>Mail: gen.gen.ta0218@gmail.com</p>
                     <form onSubmit={onSubmit}>
                         <label htmlFor="name">Name</label>
                         <input type="text" name="name" id="name" value={formData.name} onChange={onChange} required />
