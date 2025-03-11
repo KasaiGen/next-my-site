@@ -54,7 +54,7 @@ const Index = () =>{
           </div>
           <div>
             <img src="/images/typescript.svg" alt="next" />
-            <span>Typescript</span>
+            <span>TypeScript</span>
           </div>
         </div>
       </div>
