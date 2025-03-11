@@ -37,7 +37,7 @@ const Index = () =>{
         <div className="skillsContainer">
           <div>
             <img src="/images/javascript_2.svg" alt="javascript" />
-            <span>Javascript</span>
+            <span>JavaScript</span>
           </div>
           <div>
             <img src="/images/react_2.svg" alt="react" />
