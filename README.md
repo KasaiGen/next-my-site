@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# next-my-site
+Next.js × TypeScript の勉強を目的とした、自己紹介&ブログサイトです。
+## ディレクトリ構造
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+.
+├── 📁app/
+│   └── 📁api/
+│       ├── 📁contact/
+│       │   └── route.ts --- ContactフォームのAPIエンドポイント
+│       ├── 📁blog/
+│       │   ├── 📁[slug]/
+│       │   │   ├── page.tsx --- 各ブログ記事のページ
+│       │   │   └── 📁page
+│       │   └── page.tsx --- ブログ一覧ページ/
+│       │       └── 📁[pagination]/
+│       │           └── page.tsx --- ページネーションされたブログ一覧ページ
+│       ├── 📁components/
+│       │   ├── footer.tsx --- フッターコンポーネント
+│       │   ├── header.tsx --- ヘッダーコンポーネント
+│       │   ├── pagination.tsx --- ページネーションコンポーネント
+│       │   └── prevNext.tsx --- 前後の記事へのリンクコンポーネント
+│       ├── 📁contact/
+│       │   ├── 📁components/
+│       │   │   └── metadata.tsx --- Contactページのメタデータ
+│       │   └── page.tsx --- Contactページ
+│       ├── 📁styles/
+│       │   ├── all.css --- 全体のスタイル
+│       │   ├── blog.css --- ブログページのスタイル
+│       │   ├── common.css --- 共通スタイル
+│       │   ├── contact.css --- Contactページのスタイル
+│       │   ├── index.css --- トップページのスタイル
+│       │   └── singleBlog.css --- 各ブログ記事ページのスタイル
+│       ├── 📁utils/
+│       │   └── mdQueries.tsx --- ブログデータを取得するユーティリティ関数
+│       ├── .DS_Store
+│       ├── favicon.ico
+│       ├── layout.tsx --- ルートレイアウトコンポーネント
+│       ├── not-found.tsx --- 404ページ
+│       └── page.tsx --- トップページ
+├── 📁data/
+│   └── 省略 --- ブログデータ(Markdown)
+└── 📁public/
+    └── 📁image/ 
+        └── 省略 --- 素材(svg,png,jpg)
+```
+## 作成者
+河西 玄太
