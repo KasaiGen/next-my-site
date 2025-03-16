@@ -1,7 +1,7 @@
 "use client";
 
 import { useState,useEffect, FC } from "react";
-import { metadata } from "./components/metadata";
+import { metadata } from "./metadata";
 
 interface FormProps {
     name: string;
